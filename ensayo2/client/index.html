@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Consumo de API</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- navbar de la aplicacion -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Empleados</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+      aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <!-- link de la navbar -->
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <!-- link de la navbar -->
+          <a class="nav-link" href="#">Empleados</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- contenedor principal -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- texto principal -->
+      <h2 class="mx-auto mt-5">Empleados de Trabajo</h2>
+    </div>
+
+    <!-- fila de los contenedores -->
+    <div class="row ">
+      <div class="col-6 ">
+        <!-- creacion de la tabla -->
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped ">
+          <thead>
+            <th>DUI</th>
+            <th>NIT</th>
+            <th>Nombre</th>
+            <th>Salario</th>
+            <th>Profesion</th>
+            <th colspan="2">Acciones</th>
+          </thead>
+          <!-- registros de la base de datos -->
+          <tbody id="content">
+
+          </tbody>
+        </table>
+      </div>
+      </div>
+
+      <!-- contenedor dos -->
+      <div class="col-6">
+        <!-- formulario -->
+        <form method="post" id="form-empleados">
+          <div class="form-group" id="div-dui">
+            <!-- campo del formulario -->
+            <label for="dui">DUI</label>
+            <!-- campo del formulario -->
+            <input type="number" class="form-control" name="dui" min="0" step="1" maxlength="9" placeholder="DUI"
+              required>
+          </div>
+          <div class="form-group">
+            <!-- campo del formulario -->
+            <label for="nit">NIT</label>
+            <!-- campo del formulario -->
+            <input type="number" class="form-control" name="nit" min="0" step="1" maxlength="13" placeholder=""
+              required>
+          </div>
+          <div class="form-group">
+            <!-- campo del formulario -->
+            <label for="nombre">Nombre</label>
+            <!-- campo del formulario -->
+            <input type="text" class="form-control" maxlength="50" name="nombre" placeholder=""
+              required>
+          </div>
+          <div class="form-group">
+            <!-- campo del formulario -->
+            <label for="salario">Salario</label>
+            <!-- campo del formulario -->
+            <input type="number"
+              class="form-control" name="salario" step="any" maxlength="11" id=""  placeholder="">
+          </div>
+          <div class="form-group">
+            <!-- campo del formulario -->
+            <label for="profesion">Profesion</label>
+            <!-- campo del formulario -->
+            <input type="text"
+              class="form-control" name="profesion" maxlength="50" id="" aria-describedby="helpId" placeholder="">
+          </div>
+
+          <!-- botones del formulario -->
+          <button type="submit" value="create" id="btn-add" class="btn btn-primary">Guardar</button>
+          <button type="submit" value="update" id="btn-update" style="display: none;"
+            class="btn btn-success">Modificar</button>
+          <button type="reset" id="btn-cancel" class="btn btn-secondary">Cancelar</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <!-- importacion del js -->
+  <script src="js/api.js"></script>
+</body>
+
+</html>
