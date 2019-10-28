@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar of the application -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-success">
+        <!-- title of the navbar -->
+        <a class="navbar-brand" href="http://localhost/certificacion/client/">Eventos</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- container of the navbar -->
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <!-- Link of the navbar -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="http://localhost/certificacion/client/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Link of the navbar -->
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/certificacion/client/">Eventos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- container of the application  -->
+    <div class="container-fluid">
+        <!-- row completly -->
+        <div class="row m-4">
+            <!-- title the application -->
+            <h2 class="mx-auto">Eventos programados</h2>
+        </div>
+        <!-- row completly -->
+        <div class="row">
+            <div class="col-sm-4">
+                <!-- form the application  -->
+                <form method="post" class="m-3 p-2" id="form-events" style="background: rgb(211, 210, 210);">
+                    <!-- title of the form  -->
+                    <h3 class="text-center">Formulario de eventos</h3>
+                    <!-- id of the form but is hidden  -->
+                    <input type="hidden" class="form-control" name="id" id="" aria-describedby="helpId" placeholder="">
+                    <div class="form-group">
+                        <label for="titulo">Titulo</label>
+                        <!-- fild to get data of the user -->
+                        <input type="text" class="form-control" name="titulo" id="" maxlength="50"
+                            aria-describedby="helpId" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label for="fecha">Fecha</label>
+                                <!-- fild to get data of the user -->
+                                <input type="date" name="fecha" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <label for="hora">Hora</label>
+                                <!-- fild to get data of the user -->
+                                <input type="time" name="hora" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <!-- fild to get data of the user -->
+                        <textarea class="form-control" name="descripcion" maxlength="100" id="" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <!-- fild to get data of the user -->
+                        <select class="form-control" name="categoria">
+                            <option value="Publico">Público</option>
+                            <option value="Privado">Privado</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <!-- button to realizate the accion of the form -->
+                        <button type="submit" id="btn-create" value="create" class="btn btn-primary">Guardar</button>
+                        <!-- button to realizate the accion of the form -->
+                        <button type="submit" id="btn-update" value="update" class="btn btn-success"
+                            style="display: none;">Modificar</button>
+                            <!-- button to realizate the accion of the form -->
+                        <button type="reset" id="btn-reset" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                    <div id="msg-alert">
+                        
+                    </div>
+                </form>
+            </div>
+            <!-- the second row  -->
+            <div class="col-sm-8">
+                <!-- the that is resoonsive  -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-inverse text-center">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <!-- header of the table -->
+                                <th>Titulo</th>
+                                <!-- header of the table -->
+                                <th>Fecha</th>
+                                <!-- header of the table -->
+                                <th>descripcion</th>
+                                <!-- header of the table -->
+                                <th>categoria</th>
+                                <!-- header of the table -->
+                                <th colspan="2">Acciones</th>
+                            </tr>
+                        </thead>
+                        <!-- content of the table  -->
+                        <tbody id="table-content">
+         
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <!-- import the JavaScript to consume the api -->
+    <script src="js/api.js"></script>
+</body>
+
+</html>
